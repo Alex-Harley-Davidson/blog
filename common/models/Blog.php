@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\Html;
 
 /**
  * This is the model class for table "blog".
@@ -44,4 +45,16 @@ class Blog extends \yii\db\ActiveRecord
             'date' => 'Date',
         ];
     }
+
+    public function fields()
+    {
+        return [
+            'id',
+            'date',
+            'text' => function () {
+                return Html::encode($this->text);
+            },
+        ];
+    }
+
 }
