@@ -14,7 +14,10 @@ class BlogController extends \yii\rest\ActiveController
         'collectionEnvelope' => 'items',
     ];
 
-    public function actions()
+    /**
+     * @return array
+     */
+    public function actions(): array
     {
         $actions = parent::actions();
 
@@ -23,7 +26,10 @@ class BlogController extends \yii\rest\ActiveController
         return $actions;
     }
 
-    public function actionIndex()
+    /**
+     * @return ActiveDataProvider
+     */
+    public function actionIndex(): ActiveDataProvider
     {
         return new ActiveDataProvider([
             'query' => Blog::find(),

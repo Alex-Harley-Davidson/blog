@@ -15,17 +15,17 @@ use yii\helpers\Html;
 class Blog extends \yii\db\ActiveRecord
 {
     /**
-     * {@inheritdoc}
+     * @return string
      */
-    public static function tableName()
+    public static function tableName(): string
     {
         return 'blog';
     }
 
     /**
-     * {@inheritdoc}
+     * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             [['text', 'date'], 'required'],
@@ -35,9 +35,9 @@ class Blog extends \yii\db\ActiveRecord
     }
 
     /**
-     * {@inheritdoc}
+     * @return array
      */
-    public function attributeLabels()
+    public function attributeLabels(): array
     {
         return [
             'id' => 'ID',
@@ -46,7 +46,10 @@ class Blog extends \yii\db\ActiveRecord
         ];
     }
 
-    public function fields()
+    /**
+     * @return array
+     */
+    public function fields(): array
     {
         return [
             'id',
